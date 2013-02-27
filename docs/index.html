@@ -1,0 +1,50 @@
+<!DOCTYPE html><html><head><title>README</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="./docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="./index.html" class="source"><span class="file_name">README</span></a><a href="./src/js/bieber.coffee.html" class="source "><span class="base_path">src / js / </span><span class="file_name">bieber.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"></th><th class="code"></th></tr></thead><tbody><tr id="section"><td class="docs"><h1>biebernode
+</h1><h3>Version</h3><p>1.0.0</p><h3>Author</h3><p><span class="gravatar"><img src="http://www.gravatar.com/avatar/8695dd57e7495d7e5d0b10d7aae88161"/><span>Will Mayner&lt;wmayner@gmail.com&gt;</span></span></p><h3>Dependencies </h3><ul><li><b>coffee-script </b><span>1.3.3</span></li><li><b>jade </b><span>*</span></li><li><b>express </b><span>*</span></li></ul><p><h3>Stats</h3><pre class="code_stats">
+http://cloc.sourceforge.net v 1.55  T=0.5 s (2.0 files/s, 384.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+CoffeeScript                     1             20             51            121
+-------------------------------------------------------------------------------
+</pre></p></td><td id="content" class="code"><h1>BIEBERNODE</h1>
+
+<p><strong>"The Game"</strong>: see how many Bieber tweets you can view without hitting the pause button or vomiting.</p>
+
+<h2>WTF?</h2>
+
+<p>This is, beliebe it or not, an assignment for a class (cs132: Creating Modern Web Apps). We were given a server that spits out a JSON of bieber-related tweets, and the task is to display them in a feed using javascript.</p>
+
+<p>Note: the server is hosted by a course TA, so I'm not sure how long it'll actually be up.</p>
+
+<h2>Development</h2>
+
+<p>Run <code>cake</code> to see the tasks defined in the cakefile.</p>
+
+<p><code>cake dev</code> is the most important one - it builds the project, starts the server on localhost:3000, and watches everything for any changes (upon which it restarts the server). It doesn't watch CSS, actually, because I'm using LiveReload to update CSS without a page refresh.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>One new tweet is displayed every few seconds at the top</li>
+<li>Pause/play button on top left of feed (click or press <code>p</code> to use it)</li>
+<li>Hilarious video of the Biebz puking his brains out in front of thousands of people</li>
+</ul>
+
+<p>P.S. - The best Bieber-related tweet is from Bieber himself: <strong>"Milk was a bad choice. Lol"</strong></p>
+
+<h2>Bugs</h2>
+
+<ul>
+<li>Emoji characters are not displayed properly (these appear as boxes with an <code>X</code> in them, at least when running Chrome on my machine).</li>
+<li>If the play/pause button is pressed too quickly, you may see duplicate tweets.</li>
+</ul>
+
+<h2>Technologies</h2>
+
+<ul>
+<li>jQuery</li>
+<li>normalize.css</li>
+<li>CoffeeScript for the JS (in <code>src/js</code>)</li>
+<li>Less for the CSS (in <code>src/less</code>)</li>
+<li>Jade for the HTML</li>
+</ul>  </td></tr></tbody></table></div></body></html>

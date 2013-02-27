@@ -1,0 +1,221 @@
+/////////////////////////////////////////////////////////////////
+// Variables
+/////////////////////////////////////////////////////////////////
+
+// Colors
+//===============================================================
+
+// from Solarized:
+@base03 : #002b36;
+@base02 : #073642;
+@base01 : #586e75;
+@base00 : #657b83;
+@base0  : #839496;
+@base1  : #93a1a1;
+@base2  : #eee8d5;
+@base3  : #fdf6e3;
+@yellow : #b58900;
+@orange : #cb4b16;
+@red    : #dc322f;
+@magenta: #d33682;
+@violet : #6c71c4;
+@blue   : #268bd2;
+@cyan   : #2aa198;
+@green  : #859900;
+
+@fg: #bbb;
+@bg: rgba(0,0,0,0.7);
+@navbg: fadeout(@bg, 40%);
+@navfg: @orange;
+@borderColor: #555;
+
+// Spacing
+//===============================================================
+
+@bodyWidth : 720px;
+@containerWidth: 650px;
+@tweetWidth: 520px;
+@navHeight : 64px;
+@footHeight: @navHeight;
+
+// Typography
+//==============================================================
+
+// Use google webfonts
+@import url('http://fonts.googleapis.com/css?family=Armata|Titillium+Web:600');
+
+@serifFont: 'Georgia', serif;
+@sansFont: 'Armata', 'Helvetica', 'Arial', sans-serif;
+@baseFont: @sansFont;
+@baseFontSize: 16px;
+
+/////////////////////////////////////////////////////////////////
+// Bieber
+/////////////////////////////////////////////////////////////////
+
+
+#background-video {
+  display: block;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+#container {
+  display: block;
+  width: @containerWidth;
+  margin: @navHeight auto @footHeight auto;
+}
+#tweet-border {
+  width: @tweetWidth;
+  padding: 20px;
+  margin: auto;
+  border-radius: 10px;
+  background: @navbg;
+}
+#control-wrapper {
+  position: relative;
+  height: 0;
+}
+#control {
+  position: absolute;
+  @width: 10px;
+  padding: 15px;
+  width: @width;
+  height: 24px;
+  border-radius: 10px 0px 0px 10px;
+  background: @navbg;
+  top: 22px;
+  left: -60px;
+  background-repeat: no-repeat;
+}
+#control-info {
+  position: relative;
+  right: 50px;
+  width: 65px;
+  top: 10px;
+  background: @navbg;
+  border-radius: 5px 0 0 5px;
+  padding: 4px 0px 6px 10px;
+}
+.control-image {
+  height: 24px;
+  width: 24px;
+}
+#control.playing {
+  >.control-image {
+    background-image: url('../img/pause.png')
+  }
+}
+#control.paused {
+  >.control-image {
+    background-image: url('../img/play.png')
+  }
+}
+#control-info {
+}
+#tweet-wrapper {
+  border: solid 1px @borderColor;
+  background: @bg;
+  border-bottom: none;
+}
+#tweets {
+  margin: 0;
+  padding: 0;
+  transition: 0.4s ease-in;
+}
+.tweet {
+  display: block;
+  padding: 20px;
+  padding-left: 15px;
+  border-bottom: solid 1px @borderColor;
+}
+.tweet-content {
+  margin-left: 62px;
+  display: block;
+}
+.tweet-header-row {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Helvetica', @sansFont;
+}
+.tweet-img {
+  display: block;
+  height: 48px;
+  width: 48px;
+  border-radius: 7px;
+  margin-top: 5px;
+  float: left;
+}
+.tweet-name {
+  display: inline-block;
+  padding-right: 8px;
+  font-weight: 600;
+  >a {
+    color: @fg;
+    &:hover {
+      color: @magenta;
+      text-decoration: none;
+    }
+  }
+}
+.tweet-handle {
+  display: inline-block;
+  font-size: 0.8 * @baseFontSize;
+}
+.tweet-text-wrapper {
+  overflow-x: auto;
+  &::-webkit-scrollbar { display: none!important; }
+}
+.tweet-text {
+  display: inline-block;
+}
+
+/////////////////////////////////////////////////////////////////
+// Tweet Entities
+/////////////////////////////////////////////////////////////////
+.media { color: @blue }
+span.screen-name { color: @magenta }
+span.hashtag {
+  color: @blue;
+  >a { color: @cyan }
+}
+
+/////////////////////////////////////////////////////////////////
+// General Styles
+/////////////////////////////////////////////////////////////////
+
+body {
+  min-width: @bodyWidth;
+  font-family: @baseFont;
+  font-size: @baseFontSize;
+  line-height: 1.5;
+  background-color: @bg;
+  color: @fg;
+  margin: 0;
+  padding: 0 10px;
+  height: 100%;
+}
+a {
+  color: @magenta;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline
+  }
+  &:active {
+    color: @bg;
+  }
+}
+footer {
+  display: block;
+  margin: auto;
+  width: 150px;
+  text-align: center;
+  >a { color: @cyan }
+  background: @navbg;
+  padding: 5px 5px 0px 5px;
+  border-radius: 10px 10px 0 0;
+}

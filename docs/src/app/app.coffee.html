@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><title>app.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../../index.html" class="source"><span class="file_name">README</span></a><a href="../../src/app/app.coffee.html" class="source selected"><span class="base_path">src / app / </span><span class="file_name">app.coffee</span></a><a href="../../src/js/bieber.coffee.html" class="source "><span class="base_path">src / js / </span><span class="file_name">bieber.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>app.coffee</h1><div class="filepath">src/app/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><p>Module dependencies.</p>
+</td><td class="code"><div class="highlight"><pre><span class="nv">express = </span><span class="nx">require</span> <span class="s">&#39;express&#39;</span>
+<span class="nv">http    = </span><span class="nx">require</span> <span class="s">&#39;http&#39;</span>
+<span class="nv">path    = </span><span class="nx">require</span> <span class="s">&#39;path&#39;</span>
+
+<span class="nv">app = </span><span class="nx">express</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span> <span class="nf">() -&gt;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">logger</span><span class="p">(</span><span class="s">&#39;dev&#39;</span><span class="p">)</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">&#39;port&#39;</span><span class="p">,</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3000</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">&#39;views&#39;</span><span class="p">,</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s">&#39;/views&#39;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">set</span> <span class="s">&#39;view engine&#39;</span><span class="p">,</span> <span class="s">&#39;jade&#39;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">favicon</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s">&#39;/public/img/favicon.ico&#39;</span><span class="p">))</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">bodyParser</span><span class="p">()</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">methodOverride</span><span class="p">()</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">app</span><span class="p">.</span><span class="nx">router</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">static</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s">&#39;/public&#39;</span><span class="p">))</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">configure</span> <span class="s">&#39;development&#39;</span><span class="p">,</span> <span class="nf">() -&gt;</span>
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span> <span class="nx">express</span><span class="p">.</span><span class="nx">errorHandler</span><span class="p">()</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="nf">(req, res) -&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s">&#39;bieber&#39;</span><span class="p">)</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&#39;port&#39;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;Express server listening on port &quot;</span> <span class="o">+</span> <span class="nx">app</span><span class="p">.</span><span class="nx">get</span> <span class="s">&#39;port&#39;</span>
+
+</pre></div></td></tr></tbody></table></div></body></html>

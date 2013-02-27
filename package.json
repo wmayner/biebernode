@@ -1,0 +1,31 @@
+{
+  "name": "biebernode"
+, "version": "1.0.0"
+, "author": {
+    "name": "Will Mayner"
+  , "email": "wmayner@gmail.com"
+  , "url": "http://willmayner.com"
+  }
+, "private": true
+, "scripts": {
+    "start": "node app.js"
+  }
+, "dependencies": {
+    "coffee-script": "1.3.3"
+  , "jade": "*"
+  , "express": "*"
+  }
+, "devDependencies": {
+    "coffee-script": "*"
+  , "docco-husky": "*"
+  , "watchr": "*"
+  , "path": "*"
+  , "less": "*"
+  , "wrench": "*"
+  , "supervisor": "*"
+  , "colors": "*"
+  }
+, "docco_husky": {
+    "show_timestamp": false
+  }
+}
